@@ -10,12 +10,12 @@ class MainViewModel : ViewModel() {
 
     // MutableLiveData - means this list can be changed at runtime
     // Note!!! _plants above is private, only visible here the underscore represents variables not exposed to the UI layer (fragments)
-    private val _teams: MutableLiveData<List<TeamEntity>> = MutableLiveData()
+    private val _jokes: MutableLiveData<List<TeamEntity>> = MutableLiveData()
 
     // Plants is exposed to the UI - Fragment
-    val teams: LiveData<List<TeamEntity>>
+    val jokes: LiveData<List<TeamEntity>>
         // get() This is a getter() function, which returns the list of plants as LiveData
-        get() = _teams
+        get() = _jokes
 
     private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean>
@@ -25,16 +25,16 @@ class MainViewModel : ViewModel() {
     // No Longer get the data from SampleDataProvider
     init {
 //        // here we get the plant list data to share with the user interface
-        getTeams()
+        getJokes()
     }
 
-    private fun getTeams() {
+    private fun getJokes() {
         // web-access so run in a background thread - Coroutine
         viewModelScope.launch {
             _isLoading.value = true
-            val fetchedTeams = RetrofitInstance.api.getTeams()
-            Log.i(TAG, "List of Teams : $fetchedTeams")
-            _teams.value = fetchedTeams
+            val fetchedJokes = RetrofitInstance.api.getJokes()
+            Log.i(TAG, "List of Teams : $fetchedJokes")
+            _jokes.value = fetchedJokes
             _isLoading.value = false
         }
     }

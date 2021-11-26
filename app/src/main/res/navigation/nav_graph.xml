@@ -10,7 +10,7 @@
         android:label="editor_fragment"
         tools:layout="@layout/editor_fragment" >
         <argument
-            android:name="team"
+            android:name="joke"
             app:argType="com.example.mc_ca.data.TeamEntity" />
     </fragment>
     <fragment

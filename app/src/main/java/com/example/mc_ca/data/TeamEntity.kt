@@ -8,16 +8,14 @@ import android.os.Parcelable
 // data means the class is going to have some properties, will have at least one primary constructor, and have functions such as equals() toString...
 // See https://www.javatpoint.com/kotlin-data-class for a comparison of Java and Kotlin classes
 data class TeamEntity(
-    var idTeam: Int,
-    var strTeam: String?,
-    var strLeague: String?,
-    var strStadium: String?
+    var id: Int,
+    var setup: String?,
+    var punchline: String?
 ) : Parcelable
 {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
-        parcel.readString(),
         parcel.readString(),
         parcel.readString()
     ) {
@@ -29,10 +27,9 @@ data class TeamEntity(
     //constructor(name: String, league: String, stadium: String) : this(NEW_TEAM_ID, name, league, stadium)
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(idTeam)
-        parcel.writeString(strTeam)
-        parcel.writeString(strLeague)
-        parcel.writeString(strStadium)
+        parcel.writeInt(id)
+        parcel.writeString(setup)
+        parcel.writeString(punchline)
     }
 
     override fun describeContents(): Int {

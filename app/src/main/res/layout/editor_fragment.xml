@@ -8,87 +8,59 @@
     tools:context=".EditorFragment"
    >
 
-
     <TextView
-        android:id="@+id/teamName"
-        android:layout_width="150dp"
+        android:id="@+id/jokeSetup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="sans-serif-black"
-        android:text="Team : "
+        android:text="Setup "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="@string/enter_team_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/teamName"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,MissingConstraints"
-        tools:text="Team name in here" />
 
     <TextView
-        android:id="@+id/teamLeague"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
-        android:fontFamily="sans-serif-black"
-        android:text="League "
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamName" />
-
-
-    <TextView
-        android:id="@+id/league"
+        android:id="@+id/setup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="65dp"
-        android:hint="@string/enter_team_league"
+        android:hint="@string/enter_joke_setup"
         android:inputType="textCapSentences|textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamLeague"
+        app:layout_constraintTop_toBottomOf="@+id/jokeSetup"
         tools:ignore="Autofill"
         tools:text="Team league in here" />
 
     <TextView
-        android:id="@+id/teamStadium"
+        android:id="@+id/jokePunchline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="44dp"
         android:fontFamily="sans-serif-black"
-        android:text="Stadium "
+        android:text="Punchline "
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamLeague" />
+        app:layout_constraintTop_toBottomOf="@+id/jokeSetup" />
 
 
     <TextView
-        android:id="@+id/stadium"
+        android:id="@+id/punchline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="65dp"
-        android:hint="@string/enter_team_stadium"
+        android:hint="@string/enter_joke_punchline"
         android:inputType="textCapSentences|textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teamStadium"
+        app:layout_constraintTop_toBottomOf="@+id/jokePunchline"
         tools:ignore="Autofill"
         tools:text="Team stadium in here" />
 

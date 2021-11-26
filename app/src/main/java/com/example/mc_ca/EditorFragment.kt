@@ -36,9 +36,8 @@ class EditorFragment : Fragment() {
         // bind 'binding' to the editor fragment layout
         binding = EditorFragmentBinding.inflate(inflater, container, false)
        // args.plantId is the ID of the argument you added in the nav_graph (you added it to the editor fragment)
-        binding.name.setText(args.team.strTeam)
-        binding.league.setText(args.team.strLeague)
-        binding.stadium.setText(args.team.strStadium)
+        binding.setup.setText(args.joke.setup)
+        binding.punchline.setText(args.joke.punchline)
 
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner,

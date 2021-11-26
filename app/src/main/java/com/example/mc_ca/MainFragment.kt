@@ -56,10 +56,7 @@ class MainFragment : Fragment(),
             // binding.recyclerView.addItemDecoration(divider)
         }
 
-        viewModel.teams.observe(viewLifecycleOwner, Observer {
-            // for debugging - Log.i() to the Logcat during execution and view Info messages with the tag TAG (see constants for the literal string)
-            // Log.i(TAG, it.toString())
-
+        viewModel.jokes.observe(viewLifecycleOwner, Observer {
             adapter = TeamListAdapter(it, this@MainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
@@ -69,12 +66,12 @@ class MainFragment : Fragment(),
 
     }
 
-    override fun onItemClick(team: TeamEntity) {
+    override fun onItemClick(joke: TeamEntity) {
 
         // Log - print out to logcat to help with debugging if errors occur
         // TAG is a constant defined in Constants.kt - you can search yhe logcat using this TAG to help with debugging errors
         //Log.i(TAG, "onItemClick : Received Team name ${team.name}")
-        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(team)
+        val action = MainFragmentDirections.actionMainFragmentToEditorFragment(joke)
         findNavController().navigate(action)
     }
 

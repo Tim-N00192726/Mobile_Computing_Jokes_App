@@ -8,7 +8,7 @@ import com.example.mc_ca.data.TeamEntity
 import com.example.mc_ca.databinding.ListItemBinding
 
 // a reference to the Plant List data is passed in during intialisation
-class TeamListAdapter(private val teamsList: List<TeamEntity>,
+class TeamListAdapter(private val jokesList: List<TeamEntity>,
 
 // now a listener for each list item is also passed in.
 private val listener: ListItemListener
@@ -18,7 +18,7 @@ private val listener: ListItemListener
 // it also has an inner class ViewHolder
     RecyclerView.Adapter<TeamListAdapter.ViewHolder>() {
 
-    val selectedTeams = arrayListOf<TeamEntity>()
+    val selectedJokes = arrayListOf<TeamEntity>()
 
     // Innher class details with
     inner class ViewHolder(itemView: View) :
@@ -41,20 +41,20 @@ private val listener: ListItemListener
     }
 
 
-    override fun getItemCount() = teamsList.size
+    override fun getItemCount() = jokesList.size
 
     // each time data is passed to the RecyclerView's row
     // You need to bind the data to that ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // get the plant you want to display from the plantsList
-        val team = teamsList[position]
+        val joke = jokesList[position]
         // remember use with so you can refer to an objects attributes without contstantly mentioning the object
         with(holder.binding) {
 
             // same as holder.binding.plantName.text
-            teamName.text = team.strTeam
+            jokeSetup.text = joke.setup
             root.setOnClickListener{
-                listener.onItemClick(team)
+                listener.onItemClick(joke)
             }
 
         }
@@ -63,6 +63,6 @@ private val listener: ListItemListener
     }
 
     interface ListItemListener {
-        fun onItemClick(team: TeamEntity)
+        fun onItemClick(joke: TeamEntity)
     }
 }
